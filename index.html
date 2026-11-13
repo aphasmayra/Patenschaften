@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="de" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hilfe bei Briefen von der Schule – Patenschaften</title>
+  <meta name="description" content="Grundschule an der Steinlach und Ludwig-Krapf-Schule Tübingen: Eine Patin oder ein Pate hilft Ihnen, Elternbriefe und Nachrichten der Schule zu verstehen.">
+  <meta name="theme-color" content="#FFF8F0">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23B5482A'/%3E%3Cpath d='M32 47s-14-8.5-14-18a8 8 0 0 1 14-5.3A8 8 0 0 1 46 29c0 9.5-14 18-14 18z' fill='%23FFF8F0'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a class="skip" href="#main" data-t="skip">Zum Inhalt</a>
+
+  <!-- Sprachauswahl -->
+  <header class="langbar" aria-label="Sprache / Language">
+    <div class="langbar__inner">
+      <p class="langbar__label">
+        <svg aria-hidden="true" viewBox="0 0 24 24" width="22" height="22"><circle cx="12" cy="12" r="9.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M2.5 12h19M12 2.5c2.8 2.6 4.2 5.8 4.2 9.5s-1.4 6.9-4.2 9.5c-2.8-2.6-4.2-5.8-4.2-9.5S9.2 5.1 12 2.5z" fill="none" stroke="currentColor" stroke-width="1.8"/></svg>
+        <span data-t="langLabel">Sprache wählen</span>
+      </p>
+      <nav class="langbar__list" id="langList"></nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- Begrüßung -->
+    <section class="hero">
+      <div class="wrap hero__grid">
+        <div class="hero__text">
+          <div class="schools">
+            <img src="logo.png" alt="" class="schools__logo" onerror="this.remove()">
+            <p data-t="schools">Grundschule an der Steinlach · Ludwig-Krapf-Schule · Tübingen</p>
+          </div>
+          <h1 data-t="heroTitle" data-read></h1>
+          <p class="lead" data-t="heroText" data-read></p>
+          <ul class="chips" id="chips"></ul>
+          <div class="hero__actions">
+            <a class="btn btn--primary" href="#kontakt">
+              <svg aria-hidden="true" viewBox="0 0 24 24" width="22" height="22"><rect x="2.5" y="5" width="19" height="14" rx="3" fill="none" stroke="currentColor" stroke-width="2"/><path d="m3.5 7 8.5 6 8.5-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+              <span data-t="heroBtn"></span>
+            </a>
+            <a class="btn btn--soft" href="#pate-werden">
+              <svg aria-hidden="true" viewBox="0 0 24 24" width="22" height="22"><path d="M12 20s-7.5-4.6-7.5-10A4.3 4.3 0 0 1 12 7.2 4.3 4.3 0 0 1 19.5 10c0 5.4-7.5 10-7.5 10z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+              <span data-t="heroPatenBtn"></span>
+            </a>
+            <button class="btn btn--soft" id="readBtn" type="button" aria-pressed="false">
+              <svg class="ico-play" aria-hidden="true" viewBox="0 0 24 24" width="22" height="22"><path d="M4 9.5v5h3.5L12 19V5L7.5 9.5H4z" fill="currentColor"/><path d="M15.5 8.5a5 5 0 0 1 0 7M18 6a8.5 8.5 0 0 1 0 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+              <svg class="ico-stop" aria-hidden="true" viewBox="0 0 24 24" width="22" height="22"><rect x="6" y="6" width="12" height="12" rx="2.5" fill="currentColor"/></svg>
+              <span id="readLabel" data-t="readBtn"></span>
+            </button>
+          </div>
+          <p class="readmsg" id="readMsg" role="status" hidden></p>
+        </div>
+        <div class="hero__art" aria-hidden="true">
+          <svg viewBox="0 0 360 320">
+            <circle cx="190" cy="165" r="140" fill="#FDECC0"/>
+            <circle cx="300" cy="60" r="22" fill="#F6C453"/>
+            <!-- Sprechblasen -->
+            <g>
+              <rect x="22" y="40" width="96" height="62" rx="20" fill="#DCEFE8"/>
+              <path d="M58 100l-6 20 22-18z" fill="#DCEFE8"/>
+              <text x="70" y="82" text-anchor="middle" font-size="30" font-weight="700" fill="#2F6E5F" font-family="Nunito, sans-serif">Aa</text>
+            </g>
+            <g>
+              <rect x="246" y="118" width="96" height="62" rx="20" fill="#F9DCD2"/>
+              <path d="M300 178l8 20-24-16z" fill="#F9DCD2"/>
+              <text x="294" y="160" text-anchor="middle" font-size="30" font-weight="700" fill="#B5482A" font-family="Vazirmatn, sans-serif">اب</text>
+            </g>
+            <g>
+              <rect x="40" y="214" width="82" height="54" rx="18" fill="#FFFFFF" stroke="#F6C453" stroke-width="3"/>
+              <text x="81" y="251" text-anchor="middle" font-size="26" font-weight="700" fill="#3B2F2A" font-family="Nunito, sans-serif">Жж</text>
+            </g>
+            <!-- Brief -->
+            <g transform="rotate(-6 190 175)">
+              <rect x="120" y="86" width="140" height="176" rx="14" fill="#FFFFFF" stroke="#E7D6C8" stroke-width="3"/>
+              <rect x="140" y="112" width="70" height="10" rx="5" fill="#B5482A"/>
+              <rect x="140" y="136" width="100" height="8" rx="4" fill="#E7D6C8"/>
+              <rect x="140" y="154" width="88" height="8" rx="4" fill="#E7D6C8"/>
+              <rect x="140" y="172" width="100" height="8" rx="4" fill="#E7D6C8"/>
+              <rect x="140" y="190" width="64" height="8" rx="4" fill="#E7D6C8"/>
+              <path d="M190 246s-18-10.5-18-22a10 10 0 0 1 18-6 10 10 0 0 1 18 6c0 11.5-18 22-18 22z" fill="#B5482A"/>
+            </g>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <!-- So funktioniert es -->
+    <section class="section">
+      <div class="wrap">
+        <h2 data-t="stepsTitle" data-read></h2>
+        <ol class="steps" id="steps"></ol>
+      </div>
+    </section>
+
+    <!-- Wobei hilft die Patin / der Pate -->
+    <section class="section section--tint">
+      <div class="wrap two-col">
+        <div>
+          <h2 data-t="helpTitle" data-read></h2>
+          <ul class="checks" id="helpItems"></ul>
+          <p class="note" data-t="helpNote" data-read></p>
+        </div>
+        <aside class="quote" aria-hidden="true">
+          <svg viewBox="0 0 120 120" width="120" height="120"><circle cx="44" cy="46" r="18" fill="#F6C453"/><path d="M14 104c0-20 13-34 30-34s30 14 30 34z" fill="#F6C453"/><circle cx="82" cy="50" r="16" fill="#2F6E5F"/><path d="M56 106c0-18 11-30 26-30s26 12 26 30z" fill="#2F6E5F"/></svg>
+          <p data-t="normalNote" data-read></p>
+        </aside>
+      </div>
+    </section>
+
+    <!-- Kontakt -->
+    <section class="section" id="kontakt">
+      <div class="wrap">
+        <div class="card contact">
+          <div class="contact__person">
+            <div class="avatar" aria-hidden="true">
+              <svg viewBox="0 0 64 64" width="64" height="64"><circle cx="32" cy="32" r="32" fill="#F9DCD2"/><circle cx="32" cy="26" r="11" fill="#B5482A"/><path d="M12 54c3-11 11-17 20-17s17 6 20 17" fill="#B5482A"/></svg>
+            </div>
+            <div>
+              <h2 data-t="contactTitle" data-read></h2>
+              <p class="contact__name"><strong data-t="contactPerson"></strong> · <span data-t="contactRole"></span></p>
+            </div>
+          </div>
+          <p data-t="contactText" data-read></p>
+          <a class="btn btn--primary btn--big" id="mailBtn" href="#">
+            <svg aria-hidden="true" viewBox="0 0 24 24" width="24" height="24"><path d="M3 11.5 21 3l-6.5 18-3.2-7.3L3 11.5z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+            <span data-t="contactBtn"></span>
+          </a>
+          <p class="hint" data-t="contactHint" data-read></p>
+          <div class="copyline">
+            <span data-t="contactOr"></span>
+            <code id="mailAddr"></code>
+            <button class="btn btn--small" type="button" id="copyBtn" data-t="copyBtn"></button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Brief selbst übersetzen -->
+    <section class="section section--leaf">
+      <div class="wrap two-col two-col--art">
+        <div class="phone" aria-hidden="true">
+          <svg viewBox="0 0 160 220" width="160" height="220"><rect x="30" y="8" width="100" height="200" rx="18" fill="#2F6E5F"/><rect x="38" y="24" width="84" height="160" rx="8" fill="#FFF8F0"/><rect x="50" y="44" width="60" height="78" rx="6" fill="#fff" stroke="#E7D6C8" stroke-width="2"/><rect x="58" y="56" width="34" height="6" rx="3" fill="#B5482A"/><rect x="58" y="70" width="44" height="5" rx="2.5" fill="#E7D6C8"/><rect x="58" y="82" width="38" height="5" rx="2.5" fill="#E7D6C8"/><rect x="58" y="94" width="44" height="5" rx="2.5" fill="#E7D6C8"/><path d="M44 36h12M44 36v12M116 36h-12M116 36v12M44 132h12M44 132v-12M116 132h-12M116 132v-12" stroke="#F6C453" stroke-width="4" stroke-linecap="round"/><circle cx="80" cy="160" r="12" fill="#B5482A"/><circle cx="80" cy="160" r="6" fill="#FFF8F0"/></svg>
+        </div>
+        <div>
+          <h2 data-t="photoTitle" data-read></h2>
+          <p data-t="photoText" data-read></p>
+          <ol class="numlist" id="photoSteps"></ol>
+          <div class="store">
+            <a class="btn btn--light" href="https://play.google.com/store/apps/details?id=com.google.android.apps.translate" target="_blank" rel="noopener" data-t="photoAndroid"></a>
+            <a class="btn btn--light" href="https://apps.apple.com/app/google-translate/id414706506" target="_blank" rel="noopener" data-t="photoIos"></a>
+          </div>
+          <p class="note note--light" data-t="photoTip" data-read></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pate werden -->
+    <section class="section" id="pate-werden">
+      <div class="wrap">
+        <div class="card card--sun">
+          <h2 data-t="patenTitle" data-read></h2>
+          <p data-t="patenText" data-read></p>
+          <ul class="checks" id="patenItems"></ul>
+          <a class="btn btn--primary" id="patenBtn" href="#">
+            <svg aria-hidden="true" viewBox="0 0 24 24" width="22" height="22"><path d="M12 20s-7.5-4.6-7.5-10A4.3 4.3 0 0 1 12 7.2 4.3 4.3 0 0 1 19.5 10c0 5.4-7.5 10-7.5 10z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+            <span data-t="patenBtn"></span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <p data-t="footerBy"></p>
+      <p class="footer__links">
+        <a href="https://www.steinlach-lks.de/" target="_blank" rel="noopener" data-t="footerSchool"></a>
+        <a href="impressum.html" id="lnkImpressum"><span data-t="footerImpressum"></span></a>
+        <a href="datenschutz.html" id="lnkDatenschutz"><span data-t="footerPrivacy"></span></a>
+      </p>
+    </div>
+  </footer>
+
+  <noscript><p class="noscript">Bitte aktivieren Sie JavaScript, um diese Seite in Ihrer Sprache zu sehen. Kontakt: siehe Impressum.</p></noscript>
+
+  <script src="texte.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

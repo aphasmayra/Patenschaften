@@ -1,0 +1,15 @@
+Optionale Vorlese-Aufnahmen
+===========================
+
+Nicht jedes Handy hat eine Vorlese-Stimme für jede Sprache
+(besonders für Somali und Dari fehlt sie oft).
+
+Wenn jemand den Text einer Sprache vorliest und als MP3 aufnimmt,
+legen Sie die Datei einfach hier in diesen Ordner, z. B.:
+
+  so.mp3      (Somali)
+  fa-AF.mp3   (Dari)
+  ar.mp3      (Arabisch)
+  tr.mp3, hu.mp3, en.mp3, ru.mp3, el.mp3, de.mp3
+
+Die Seite spielt dann automatisch die Aufnahme ab, statt der Computerstimme.
